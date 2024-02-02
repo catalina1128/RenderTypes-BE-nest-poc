@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-
+import type { Person } from './api/people/peopleTypes';
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
@@ -8,5 +8,10 @@ export class AppController {
   @Get()
   getHello(): string {
     return this.appService.getHello();
+  }
+
+  @Get('people')
+  getPeople(): Array<Person> {
+    return this.appService.getPeople();
   }
 }
