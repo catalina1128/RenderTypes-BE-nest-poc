@@ -4,7 +4,7 @@ export default function getPeople(): Array<Person> {
   return [
     {
       id: 1,
-      first_name: 'Konstanze',
+      first_name: 'Konstanzesfdvd fwefwef',
       last_name: 'Jorger',
       email: 'kjorger0@parallels.com',
     },
