@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
-import type { Person } from './api/people/peopleTypes';
+import { AppService } from '../services/app.service';
+import type { Person } from '../api/people/peopleTypes';
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
@@ -11,7 +11,7 @@ export class AppController {
   }
 
   @Get('people')
-  getPeople(): Array<Person> {
+  getPeople(): Promise<Person[]> {
     return this.appService.getPeople();
   }
 }
